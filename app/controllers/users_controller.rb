@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  def show
+
+  def mypage
   end
 
   def unsubscribe
@@ -13,4 +14,5 @@ class UsersController < ApplicationController
 
   def others
   end
+
 end
