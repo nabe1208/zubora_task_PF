@@ -7,8 +7,7 @@ environment.plugins.prepend(
   new webpack.ProvidePlugin({
 	$: 'jquery/src/jquery',
     jQuery: 'jquery/src/jquery',
-    // skippr
-    "window.jQuery": "jquery"
+    Popper: 'popper.js'
   })
 )
 

@@ -1,2 +1,38 @@
-<h1>Tags#new</h1>
-<p>Find me in app/views/tags/new.html.erb</p>
+<h1>※リスト名を表示</h1>
+
+<div id="error">
+  <% if @tag.errors.any? %>
+ <ul>
+  <h6>
+    <%= @tag.errors.count %> error prohibited this obj from being updateed:
+  </h6>
+    <% @tag.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+ </ul>
+  <% end %>
+</div>
+
+
+ <!--投稿機能-->
+ <%= form_with model: @tag, url: tags_path, method: :post do |f| %>
+  <%= f.label 'タグ名' %><br/>
+  <%= f.text_field :tag_name %>
+  <%= f.submit 'Create tag' %>
+ <% end %>
+
+   <h2>タグ一覧</h2>
+     <table>
+      <thead>
+       <tr>
+         <th></th>
+       </tr>
+      </thead>
+     <tbody>
+     <% @tags.each do |tag| %>
+       <tr>
+         <td><%= tag.tag_name %></td>
+       </tr>
+     <% end %>
+     </tbody>
+   </table>
