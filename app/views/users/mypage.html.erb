@@ -1,28 +1,36 @@
 <h1>mypage</h1>
 
-<span>ListCategory</span>
-<!--後ほど編集-->
-<p><%= link_to 'リストにタグを追加', new_tag_path %></p>
+<!--カレンダー-->
+<%= month_calendar do |date| %>
+  <%= date.day %>
+<% end %>
+
+
+<!--list 一覧-->
+<span>リスト一覧</span>
 <ul>
-<li>買い物リスト
+<li>買い物リスト<%= link_to 'リストにタグ+', new_tag_path %>
   <ul>
-  <li><a href="#">タグ1</a></li>
-  <li><a href="#">タグ2</a></li>
-  <li><a href="#">タグ3</a></li>
+  <li>タグ</li>
+  <li>タグ</li>
+  <li>タグ</li>
   </ul>
 </li>
 <li>要件リスト
   <ul>
-  <li><a href="#">タグ1</a></li>
-  <li><a href="#">タグ2</a></li>
-  <li><a href="#">タグ3</a></li>
+  <li></li>
+  <li></li>
+  <li></li>
   </ul>
 </li>
 <li>日常リスト
   <ul>
-  <li><a href="#">タグ1</a></li>
-  <li><a href="#">タグ2</a></li>
-  <li><a href="#">タグ3</a></li>
+  <li></li>
+  <li></li>
+  <li></li>
   </ul>
 </li>
 </ul>
+
+<%= link_to 'リストを追加', lists_path %>
+<%= link_to 'リストにタグを追加', new_tag_path %>

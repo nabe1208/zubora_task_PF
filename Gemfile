@@ -57,3 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 6/25 やり直し
 gem 'devise'
+# 7/2
+gem 'simple_calendar', '~> 2.0'
+gem 'enum_help'

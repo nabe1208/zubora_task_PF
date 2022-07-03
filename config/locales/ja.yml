@@ -1,0 +1,7 @@
+  ja:
+    enums:
+      list:
+        default_list_name:
+          buy: "買い物リスト"
+          work: "要件リスト"
+          everyday: "日常リスト"

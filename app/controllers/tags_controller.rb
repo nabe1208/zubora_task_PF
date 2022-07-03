@@ -3,7 +3,7 @@ class TagsController < ApplicationController
   def new
     @tags = Tag.all
     @tag = Tag.new
-    @user = current_user
+    @user = current_user.list_id
   end
 
   def create
@@ -11,9 +11,15 @@ class TagsController < ApplicationController
     if @tag.save
      redirect_to new_tag_path, notice: "You have created tag successfully."
     else
-     @tags = Tag.all
+     @ltags = Tag.all
      render :new, notice: "miss"
     end
+  end
+
+  def destroy
+    @tag = Tag.find(params[:id])
+    @tag.destroy
+    redirect_to new_tag_path
   end
 
   private

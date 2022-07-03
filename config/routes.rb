@@ -6,20 +6,23 @@ Rails.application.routes.draw do
 
   devise_for :users
   # 2 users
-  resources :users, only: [:edit,:index,:update,:destroy]
+  # 7 comments newのviewは要らなければ消す。
+  resources :users, only: [:edit,:index,:update, :destroy] do
+    resources :comments, only: [:new, :create, :destroy]
+  end
   get "user/mypage" => "users#mypage", as: 'mypage'
   get 'user/unsubscribe' => "users#unsubscribe", as: 'unsubscribe'
   get 'user/:id' => "users#others", as: 'others'
+  patch 'user/withdrawal' => 'users#withdrawal', as: 'withdrawal'
   # 3 colenders
   resources :calenders, only: [:show, :create, :update, :destroy]
-  # 4 lists
-  resources :lists, only: [:index]
+  # 4 lists 7/2編集 create追加
+  resources :lists, only: [:create, :destroy, :index]
   # 5 tags newのviewは要らなければ消す。
   resources :tags, only: [:new, :create, :destroy]
   # 6 likes
   resources :likes, only: [:create, :destroy]
-  # 7 comments newのviewは要らなければ消す。
-  resources :comments, only: [:new, :create, :destroy]
+
   # 8 memos
   resources :memos, only: [:show, :create, :update, :destroy]
 

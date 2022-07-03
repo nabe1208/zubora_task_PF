@@ -10,10 +10,10 @@ import "channels"
 // 6/30 導入後、追記
 import "jquery"
 // 追記6/30 <%= javascript_pack_tag 'jQ/list' %> を使用するhtmlファイルに記述する。
+import "jQ/list.js"
 import "popper.js";
 import "bootstrap";
 import '../stylesheets/application'
-import "jQ/list.js"
 
 Rails.start()
 Turbolinks.start()

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_25_144009) do
+ActiveRecord::Schema.define(version: 2022_07_03_012027) do
 
   create_table "calenders", force: :cascade do |t|
     t.integer "list_id"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2022_06_25_144009) do
     t.string "list_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "default_list_name", default: 0, null: false
   end
 
   create_table "memos", force: :cascade do |t|
