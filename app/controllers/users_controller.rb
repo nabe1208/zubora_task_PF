@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def mypage
     @lists = List.all
+    @user = current_user
   end
 
 # 退会アクション
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
 
 # 外部ユーザー一覧
   def index
+    @users = User.all
   end
 
 # 外部ユーザー閲覧
@@ -42,6 +44,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :introduction)
+    params.require(:user).permit(:name, :introduction, :image)
   end
 end

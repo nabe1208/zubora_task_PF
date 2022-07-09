@@ -16,6 +16,7 @@
     <header>
       <nav>
         <div class="container">
+          <div>
             <% if user_signed_in? %>
             <div class="align-center">
              <%= current_user.name %> さんのタスク管理
@@ -39,10 +40,15 @@
              </li>
             <% end %>
             </ul>
+         </div>
        </div>
       </nav>
-        </div>
-      </nav>
+
+      <div class="icon">
+         <!--user一覧-->
+         <p><%= link_to 'ほかのユーザー一覧', users_path %></p>
+         <!--user編集画面-->
+      </div>
 
     </header>
 

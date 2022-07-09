@@ -13,4 +13,7 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
   validates :email, presence: true
 
+  # refile-画像投稿機能、画像を入れたいカラム名+id
+  attachment :image
+
 end

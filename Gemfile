@@ -60,3 +60,6 @@ gem 'devise'
 # 7/2
 gem 'simple_calendar', '~> 2.0'
 gem 'enum_help'
+# 7/9
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"

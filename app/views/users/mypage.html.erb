@@ -1,5 +1,12 @@
 <h1>mypage</h1>
-
+<!--プロフィール画像-->
+<p>
+  <% if @user.image_id.present? %>
+   <%= image_tag attachment_url(@user, :image, format: "png"), class: 'plofileimage pt-15', style: 'max-height: 150px width: 100%' %>
+  <% else %>
+   <%= image_tag 'test1.png', class: 'plofileimage pt-15', style: 'max-height: 150px width: 100%' %>
+  <% end %>
+</p>
 <!--カレンダー-->
 <%= month_calendar do |date| %>
   <%= date.day %>
@@ -32,5 +39,10 @@
 </li>
 </ul>
 
+<div class="memo">
+</div>
+
 <%= link_to 'リストを追加', lists_path %>
 <%= link_to 'リストにタグを追加', new_tag_path %>
+<%= link_to 'ユーザー情報の編集', edit_user_path(@user.id) %>
+

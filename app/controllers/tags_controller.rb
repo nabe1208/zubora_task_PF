@@ -3,7 +3,6 @@ class TagsController < ApplicationController
   def new
     @tags = Tag.all
     @tag = Tag.new
-    @user = current_user.list_id
   end
 
   def create

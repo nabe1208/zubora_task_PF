@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   devise_for :users
   # 2 users
   # 7 comments newのviewは要らなければ消す。
-  resources :users, only: [:edit,:index,:update, :destroy] do
-    resources :comments, only: [:new, :create, :destroy]
+  resources :users, only: [:edit,:index, :update, :destroy] do
+    resources :comments, only: [:show, :create, :destroy]
   end
   get "user/mypage" => "users#mypage", as: 'mypage'
   get 'user/unsubscribe' => "users#unsubscribe", as: 'unsubscribe'
